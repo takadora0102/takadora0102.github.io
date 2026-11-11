@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奥村隆広 ポートフォリオ | Takahiro Okumura</title>
+<meta name="description" content="福岡工業大学 工学部 電気工学科・奥村隆広の制作ポートフォリオ。Raspberry Pi、ESP32、Discordボット、パーソナルAIなどのプロジェクトを紹介します。">
+<style>
+  :root{
+    --ink:#1a2332; --sub:#4a5568; --line:#dbe2ec; --bg:#f6f8fb;
+    --card:#ffffff; --accent:#1d4ed8; --accent-soft:#e3ebfd;
+    --ok:#15803d; --ok-bg:#e7f6ec; --dev:#b45309; --dev-bg:#fdf3e0;
+    --plan:#5b6472; --plan-bg:#eceff3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+       color:var(--ink); background:var(--bg); line-height:1.75; font-size:16px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 20px 64px;}
+
+  header{padding:56px 0 28px; border-bottom:3px solid var(--ink);}
+  .name-en{font-size:13px; letter-spacing:.18em; color:var(--sub); text-transform:uppercase;}
+  h1{font-size:36px; font-weight:700; letter-spacing:.02em; margin:4px 0 2px;}
+  .affil{font-size:17px; color:var(--ink); margin-bottom:14px;}
+  .lead{color:var(--sub); max-width:46em;}
+  .meta{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px;}
+  .meta span{background:var(--accent-soft); color:var(--accent); border-radius:999px;
+            padding:3px 12px; font-size:13px; font-weight:600;}
+
+  section{margin-top:44px;}
+  h2{font-size:21px; border-left:5px solid var(--accent); padding-left:12px; margin-bottom:18px;}
+  p.about{color:var(--sub); max-width:48em;}
+
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:680px){ .grid{grid-template-columns:1fr;} }
+  .card{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px 22px;}
+  .card h3{font-size:18px; margin-bottom:2px;}
+  .card .en{font-size:12px; color:var(--sub); letter-spacing:.06em; margin-bottom:10px;}
+  .badge{display:inline-block; font-size:12px; font-weight:700; border-radius:999px; padding:1px 10px; vertical-align:2px; margin-left:8px;}
+  .badge.ok{background:var(--ok-bg); color:var(--ok);}
+  .badge.dev{background:var(--dev-bg); color:var(--dev);}
+  .badge.plan{background:var(--plan-bg); color:var(--plan);}
+  .card p{font-size:14.5px; color:var(--sub); margin-bottom:10px;}
+  .card .point{font-size:14.5px; color:var(--ink); background:var(--bg); border-radius:8px; padding:10px 12px; margin-bottom:12px;}
+  .card .point b{color:var(--accent);}
+  .tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .tags li{list-style:none; font-size:12.5px; border:1px solid var(--line); border-radius:999px; padding:1px 10px; color:var(--sub); background:#fff;}
+
+  .skills{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:680px){ .skills{grid-template-columns:1fr;} }
+  .skill-box{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 22px;}
+  .skill-box h3{font-size:15px; color:var(--accent); margin-bottom:8px;}
+  .skill-box ul{list-style:none; font-size:14.5px; color:var(--sub);}
+  .skill-box li{padding:2px 0;}
+
+  footer{margin-top:56px; border-top:1px solid var(--line); padding-top:18px;
+         color:var(--sub); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+  @media print{
+    body{background:#fff; font-size:12.5px;}
+    .wrap{max-width:none; padding:0;}
+    header{padding:12px 0 14px;}
+    h1{font-size:26px;}
+    section{margin-top:26px;}
+    .card,.skill-box{break-inside:avoid; border-color:#bbb;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="name-en">Takahiro Okumura — Portfolio</div>
+    <h1>奥村隆広</h1>
+    <div class="affil">福岡工業大学 工学部 電気工学科（2029年3月卒業予定）</div>
+    <p class="lead">
+      電気工学科で学びながら、Raspberry PiやESP32を使った電子工作・組み込み開発と、
+      自宅Linuxサーバーの構築・運用を続けています。作ったものを「動かし続ける」ところまで含めて、
+      ハードウェアとソフトウェアの両面から取り組むのが自分のスタイルです。
+    </p>
+    <div class="meta">
+      <span>回路設計</span><span>組み込み</span><span>ハードウェア開発</span>
+      <span>制御</span><span>半導体</span><span>研究開発</span>
+    </div>
+    <!-- TODO: GitHubプロフィールのURLが決まったらここにリンクを追加する -->
+  </header>
+
+  <section>
+    <h2>制作プロジェクト</h2>
+    <div class="grid">
+
+      <article class="card">
+        <h3>takadora-discord-bot<span class="badge ok">運用中</span></h3>
+        <div class="en">DISCORD BOT / SYSTEM MONITORING</div>
+        <p>
+          自宅サーバーの状態監視を担う自作Discordボット。Raspberry Pi 5のシステム状態を定期取得し、
+          スラッシュコマンドでの状態確認や、異常時のアラート通知を行います。
+        </p>
+        <div class="point"><b>工夫点：</b>常時稼働を前提にDockerで運用し、監視データはSQLiteに蓄積して履歴を追える構成にしました。監視間隔とアラート閾値を設定できるようにしています。</div>
+        <ul class="tags"><li>Python</li><li>Docker / Compose</li><li>SQLite</li><li>Raspberry Pi 5</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>自宅サーバー taka-rp5<span class="badge ok">稼働中</span></h3>
+        <div class="en">HOME SERVER / LINUX</div>
+        <p>
+          Raspberry Pi 5を常時稼働のヘッドレスLinuxサーバーとして構築・運用。
+          各種ボットや自動化ワークフローの実行基盤になっています。
+        </p>
+        <div class="point"><b>工夫点：</b>起動・保存メディアにNVMe SSD（Pimoroni NVMe Base）を採用し、速度と耐久性を確保。SSHによる管理と、Tailscaleによる安全なリモートアクセスを整えています。</div>
+        <ul class="tags"><li>Raspberry Pi 5</li><li>Linux (Debian系)</li><li>NVMe SSD</li><li>Docker</li><li>Tailscale</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>power-meter-hub<span class="badge dev">開発中</span></h3>
+        <div class="en">MQTT / POWER MONITORING</div>
+        <p>
+          MQTTブローカー（Eclipse Mosquitto）を中心に、電力まわりのデータを集約するための基盤です。
+          自宅サーバーのテレメトリ連携を見据えて開発しています。
+        </p>
+        <div class="point"><b>工夫点：</b>計測側と集約側をMQTTで疎結合にし、センサーやデバイスを追加しやすい構成を目指しています。</div>
+        <ul class="tags"><li>MQTT</li><li>Eclipse Mosquitto</li><li>Raspberry Pi 5</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>カスタムRaspberry Pi 5ケース<span class="badge plan">設計中</span></h3>
+        <div class="en">CUSTOM ENCLOSURE / PCB DESIGN</div>
+        <p>
+          Raspberry Pi 5専用のカスタムケースを設計中。ESP32によるファン制御や表示機能を一体化し、
+          専用PCBの設計まで含めて取り組んでいます。
+        </p>
+        <div class="point"><b>工夫点：</b>PWMファン制御、OLED表示、ロータリーエンコーダ、WS2812B LED、USB-C電源分配を盛り込み、外部ケーブルを最小化する構成を、3Dモデルでの部品配置とエアフロー検討から進めています。</div>
+        <ul class="tags"><li>ESP32</li><li>カスタムPCB</li><li>PWM制御</li><li>3Dモデリング</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>パーソナルAIシステム<span class="badge dev">開発中</span></h3>
+        <div class="en">PERSONAL AI / AUTOMATION</div>
+        <p>
+          Raspberry Pi上で動く個人用AIシステム。Discordを入口に、Gemini APIやOpenAIのモデルへ
+          調査依頼を投げ、結果をGoogle Driveへ自動でアーカイブします。
+        </p>
+        <div class="point"><b>工夫点：</b><code>/research</code> ワークフローとして定型化し、技術調査・就職情報の収集・半導体ニュースの監視といった日常の情報収集を自動化することを狙っています。</div>
+        <ul class="tags"><li>Python</li><li>Gemini API</li><li>OpenAI API</li><li>Google Drive</li><li>Discord</li></ul>
+      </article>
+
+      <article class="card">
+        <h3>講義資料アーカイブ自動化<span class="badge ok">運用中</span></h3>
+        <div class="en">WORKFLOW AUTOMATION</div>
+        <p>
+          大学の講義資料をDiscord経由で受け取り、Google Driveへ自動で整理・保存するワークフロー。
+          手作業でのファイル整理をなくすために作りました。
+        </p>
+        <div class="point"><b>工夫点：</b>ファイルの自動分類と重複検出を入れ、同じ資料を二重に保存しないようにしています。</div>
+        <ul class="tags"><li>Python</li><li>Google Drive</li><li>Discord</li></ul>
+      </article>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>スキル</h2>
+    <div class="skills">
+      <div class="skill-box">
+        <h3>プログラミング</h3>
+        <ul>
+          <li>Python（ボット開発・自動化・API連携）</li>
+          <li>C（学習中：自力での実装・デバッグを目標）</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>インフラ・運用</h3>
+        <ul>
+          <li>Docker / Docker Compose</li>
+          <li>Linux（Debian系）サーバー構築・運用、SSH管理</li>
+          <li>Git / GitHub、Tailscale</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>データ・通信</h3>
+        <ul>
+          <li>SQLite（テレメトリの蓄積）</li>
+          <li>MQTT（Eclipse Mosquitto）</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>ハードウェア</h3>
+        <ul>
+          <li>Raspberry Pi 5、ESP32 / Arduino Nano ESP32</li>
+          <li>電子工作、はんだ付け、カスタムPCB設計</li>
+          <li>ファンPWM制御、OLED表示、LED制御（WS2812B）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>興味・志望分野</h2>
+    <p class="about">
+      電気・電子回路設計、半導体開発、組み込みシステム、ハードウェア開発、制御工学、研究開発に関心があります。
+      あわせて、電力システムや電気インフラ、FA・PLC、生産技術、設備保全といった現場寄りの分野も候補として視野に入れています。
+      大学で学ぶ理論と、手を動かして作る経験の両方を、ものづくりの仕事につなげたいと考えています。
+    </p>
+  </section>
+
+  <footer>
+    <span>© 2026 Takahiro Okumura</span>
+    <span>最終更新：2026年11月</span>
+  </footer>
+
+</div>
+</body>
+</html>
