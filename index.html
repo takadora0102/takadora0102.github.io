@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>奥村隆広 ポートフォリオ | Takahiro Okumura</title>
-<meta name="description" content="福岡工業大学 工学部 電気工学科・奥村隆広の制作ポートフォリオ。Raspberry Pi、ESP32、Discordボット、パーソナルAIなどのプロジェクトを紹介します。">
+<meta name="description" content="福岡工業大学 工学部 電気工学科・奥村隆広の制作ポートフォリオ。Raspberry Pi 5のカスタムケース・専用基板と、自宅Linuxサーバーのプロジェクトを紹介します。">
 <style>
   :root{
     --ink:#1a2332; --sub:#4a5568; --line:#dbe2ec; --bg:#f6f8fb;
@@ -95,39 +95,6 @@
     <div class="grid">
 
       <article class="card">
-        <h3>takadora-discord-bot<span class="badge ok">運用中</span></h3>
-        <div class="en">DISCORD BOT / SYSTEM MONITORING</div>
-        <p>
-          自宅サーバーの状態監視を担う自作Discordボット。Raspberry Pi 5のシステム状態を定期取得し、
-          スラッシュコマンドでの状態確認や、異常時のアラート通知を行います。
-        </p>
-        <div class="point"><b>工夫点：</b>常時稼働を前提にDockerで運用し、監視データはSQLiteに蓄積して履歴を追える構成にしました。監視間隔とアラート閾値を設定できるようにしています。</div>
-        <ul class="tags"><li>Python</li><li>Docker / Compose</li><li>SQLite</li><li>Raspberry Pi 5</li></ul>
-      </article>
-
-      <article class="card">
-        <h3>自宅サーバー taka-rp5<span class="badge ok">稼働中</span></h3>
-        <div class="en">HOME SERVER / LINUX</div>
-        <p>
-          Raspberry Pi 5を常時稼働のヘッドレスLinuxサーバーとして構築・運用。
-          各種ボットや自動化ワークフローの実行基盤になっています。
-        </p>
-        <div class="point"><b>工夫点：</b>起動・保存メディアにNVMe SSD（Pimoroni NVMe Base）を採用し、速度と耐久性を確保。SSHによる管理と、Tailscaleによる安全なリモートアクセスを整えています。</div>
-        <ul class="tags"><li>Raspberry Pi 5</li><li>Linux (Debian系)</li><li>NVMe SSD</li><li>Docker</li><li>Tailscale</li></ul>
-      </article>
-
-      <article class="card">
-        <h3>power-meter-hub<span class="badge dev">開発中</span></h3>
-        <div class="en">MQTT / POWER MONITORING</div>
-        <p>
-          MQTTブローカー（Eclipse Mosquitto）を中心に、電力まわりのデータを集約するための基盤です。
-          自宅サーバーのテレメトリ連携を見据えて開発しています。
-        </p>
-        <div class="point"><b>工夫点：</b>計測側と集約側をMQTTで疎結合にし、センサーやデバイスを追加しやすい構成を目指しています。</div>
-        <ul class="tags"><li>MQTT</li><li>Eclipse Mosquitto</li><li>Raspberry Pi 5</li></ul>
-      </article>
-
-      <article class="card">
         <h3>カスタムRaspberry Pi 5ケース<span class="badge plan">設計中</span></h3>
         <div class="en">CUSTOM ENCLOSURE / PCB DESIGN</div>
         <p>
@@ -139,25 +106,14 @@
       </article>
 
       <article class="card">
-        <h3>パーソナルAIシステム<span class="badge dev">開発中</span></h3>
-        <div class="en">PERSONAL AI / AUTOMATION</div>
+        <h3>自宅サーバー taka-rp5<span class="badge ok">稼働中</span></h3>
+        <div class="en">HOME SERVER / LINUX</div>
         <p>
-          Raspberry Pi上で動く個人用AIシステム。Discordを入口に、Gemini APIやOpenAIのモデルへ
-          調査依頼を投げ、結果をGoogle Driveへ自動でアーカイブします。
+          Raspberry Pi 5を常時稼働のヘッドレスLinuxサーバーとして構築・運用。
+          各種ボットや自動化ワークフローの実行基盤になっています。
         </p>
-        <div class="point"><b>工夫点：</b><code>/research</code> ワークフローとして定型化し、技術調査・就職情報の収集・半導体ニュースの監視といった日常の情報収集を自動化することを狙っています。</div>
-        <ul class="tags"><li>Python</li><li>Gemini API</li><li>OpenAI API</li><li>Google Drive</li><li>Discord</li></ul>
-      </article>
-
-      <article class="card">
-        <h3>講義資料アーカイブ自動化<span class="badge ok">運用中</span></h3>
-        <div class="en">WORKFLOW AUTOMATION</div>
-        <p>
-          大学の講義資料をDiscord経由で受け取り、Google Driveへ自動で整理・保存するワークフロー。
-          手作業でのファイル整理をなくすために作りました。
-        </p>
-        <div class="point"><b>工夫点：</b>ファイルの自動分類と重複検出を入れ、同じ資料を二重に保存しないようにしています。</div>
-        <ul class="tags"><li>Python</li><li>Google Drive</li><li>Discord</li></ul>
+        <div class="point"><b>工夫点：</b>起動・保存メディアにNVMe SSD（Pimoroni NVMe Base）を採用し、速度と耐久性を確保。SSHによる管理と、Tailscaleによる安全なリモートアクセスを整えています。</div>
+        <ul class="tags"><li>Raspberry Pi 5</li><li>Linux (Debian系)</li><li>NVMe SSD</li><li>Docker</li><li>Tailscale</li></ul>
       </article>
 
     </div>
